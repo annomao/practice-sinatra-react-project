@@ -2,10 +2,7 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
-  get "/" do
-    "Welcome to the homepage"
-  end
-
+  
   get "/users" do
     users = User.all.order(created_at: :asc)
     users.to_json
