@@ -31,6 +31,9 @@ gem "rake", "~> 13.0"
 # Provides functionality to interact with a postgres database
 gem "pg"
 
+# another web server
+gem "puma"
+
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
