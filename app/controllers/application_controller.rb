@@ -2,13 +2,16 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
-  
-  get "/users" do
+  get '/' do
+    "Welcome to the homepage"
+  end
+
+  get '/users' do
     users = User.all.order(created_at: :asc)
     users.to_json
   end
 
-  post "/users" do 
+  post '/users' do 
     user = User.create(
       name:params[:name],
       username:params[:username],
@@ -18,12 +21,12 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
-  get "/reports" do
+  get '/reports' do
     reports = User.all.order(:created_at)
     reports.to_json
   end
 
-  post "/reports" do
+  post '/reports' do
     report = Report.create(
       title:params[:title],
       location:params[:location],
